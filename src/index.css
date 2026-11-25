@@ -1,0 +1,88 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', 'Noto Sans Tamil', system-ui, -apple-system, sans-serif;
+    --font-body: 'Plus Jakarta Sans', 'Noto Sans Tamil', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    --chart-bar-fill: #0B1220;
+    --chart-area-stroke: #059669;
+    --chart-area-start: rgba(5, 150, 105, 0.24);
+    --chart-area-end: rgba(5, 150, 105, 0.01);
+    --chart-grid-stroke: #E2E8F0;
+    --chart-axis-tick: #64748B;
+  }
+
+  .dark {
+    --chart-bar-fill: #10B981;
+    --chart-area-stroke: #34D399;
+    --chart-area-start: rgba(52, 211, 153, 0.28);
+    --chart-area-end: rgba(52, 211, 153, 0.01);
+    --chart-grid-stroke: rgba(148, 163, 184, 0.12);
+    --chart-axis-tick: #94A3B8;
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #F6F7F9;
+    color: #0B1220;
+  }
+
+  .dark body {
+    background-color: #070B14;
+    color: #F1F5F9;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  .font-mono, .tabular-money {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Subtle architectural scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.28);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  aside, header, .no-print {
+    display: none !important;
+  }
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+}

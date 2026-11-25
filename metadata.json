@@ -1,0 +1,8 @@
+{
+  "name": "Kaveri ChitLedger ERP",
+  "description": "Enterprise Chit Fund Management System for Tamil Nadu & India with multi-branch operations, paise-exact financial calculations, auctions, double-entry accounting, maker-checker approvals, and PostgreSQL auditability.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
